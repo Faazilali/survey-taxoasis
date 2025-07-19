@@ -1,0 +1,6 @@
+Flask==2.3.3
+Flask-SQLAlchemy==3.1.1
+flask_login
+Flask-APScheduler==1.13.1
+python-dotenv==1.0.1
+gunicorn==21.2.0
