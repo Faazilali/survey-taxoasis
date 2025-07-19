@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Welcome{% endblock %}
+
+{% block content %}
+<div class="container hero-section">
+    <div class="jumbotron bg-primary text-white text-center py-5 rounded-3 shadow-lg animate__animated animate__zoomIn">
+        <h1 class="display-4 mb-4">Welcome to the UAE Document App!</h1>
+        <p class="lead mb-4">Securely manage your renewable business documents (Trade License, Emirates ID, Passport, etc.) and get timely reminders for renewals.</p>
+        <hr class="my-4 bg-white">
+        <p class="mb-4">Sign up or log in to get started.</p>
+        <div class="d-flex justify-content-center gap-3">
+            <a class="btn btn-light btn-lg shadow-sm animate__animated animate__pulse animate__infinite" href="{{ url_for('register') }}" role="button">Register</a>
+            <a class="btn btn-outline-light btn-lg shadow-sm" href="{{ url_for('login') }}" role="button">Login</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

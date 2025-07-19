@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block title %}Upload Document{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="card shadow-lg animate__animated animate__fadeIn">
+                <div class="card-header bg-primary text-white text-center">
+                    <h4>Upload New Document</h4>
+                </div>
+                <div class="card-body">
+                    <form method="POST" action="{{ url_for('upload_document') }}" enctype="multipart/form-data">
+                        <div class="mb-3">
+                            <label for="document_type" class="form-label">Document Type</label>
+                            <select class="form-select" id="document_type" name="document_type" required>
+                                <option value="" disabled selected>Select Document Type</option>
+                                <option value="Trade License">Trade License</option>
+                                <option value="Emirates ID">Emirates ID</option>
+                                <option value="Passport">Passport</option>
+                                <option value="Visa">Visa</option>
+                                <option value="Commercial Registration">Commercial Registration</option>
+                                <option value="Tenancy Contract">Tenancy Contract</option>
+                                <option value="MOU/Agreement">MOU/Agreement</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="document" class="form-label">Upload File</label>
+                            <input type="file" class="form-control" id="document" name="document" accept=".pdf,.jpg,.png" required>
+                            <small class="form-text text-muted">Supported formats: PDF, JPG, PNG.</small>
+                        </div>
+                        <div class="mb-3">
+                            <label for="issue_date" class="form-label">Issue Date (Optional)</label>
+                            <input type="date" class="form-control" id="issue_date" name="issue_date">
+                        </div>
+                        <div class="mb-3">
+                            <label for="expiry_date" class="form-label">Expiry/Renewal Date</label>
+                            <input type="date" class="form-control" id="expiry_date" name="expiry_date" required>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary">Upload Document</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
